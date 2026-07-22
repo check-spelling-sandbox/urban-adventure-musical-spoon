@@ -83,4 +83,3 @@ jobs:
           task: comment
           experimental_apply_changes_via_bot: ${{ contains(github.event_name, 'pull_request') && 1 || 0 }}
           run-id: ${{ github.event.workflow_run.id }}
-          event_aliases: '{"workflow_run": "${{ github.event.workflow_run.event }}"}'
