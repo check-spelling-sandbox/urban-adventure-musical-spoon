@@ -76,7 +76,7 @@ jobs:
       contents: write
       pull-requests: write
     steps:
-      - name: comment
+      - name: Comment
         uses: check-spelling-sandbox/check-spelling@prerelease
         with:
           spell_check_this: check-spelling/spell-check-this@prerelease
