@@ -69,7 +69,7 @@ permissions: {}
 
 jobs:
   comment-run:
-    name: Comment (Call-Push)
+    name: Comment
     runs-on: ubuntu-slim
     permissions:
       actions: read
