@@ -46,7 +46,7 @@ jobs:
       actions: read
       pull-requests: write
     needs: dispatcher
-    if: ${{ ! contains(needs.dispatcher.outputs.trigger, 'pull_request') }}
+    if: ${{ needs.dispatcher.outputs.followup && contains(needs.dispatcher.outputs.trigger, 'pull_request') }}
     steps:
       - name: Comment
         uses: check-spelling-sandbox/check-spelling@prerelease
@@ -60,6 +60,7 @@ jobs:
     name: Comment (Push)
     runs-on: ubuntu-slim
     needs: dispatcher
+    if: ${{ needs.dispatcher.outputs.followup && ! contains(needs.dispatcher.outputs.trigger, 'pull_request') }}
     permissions:
       actions: read
       contents: write
